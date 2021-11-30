@@ -1,0 +1,72 @@
+<app-banner-widget [heading]="heading"></app-banner-widget>
+<button (click)="back()" >Back</button>
+
+<div class="section about" *ngIf="user">
+  <h2>
+    
+  </h2>
+
+  <div class="form-item">
+    <label for="">Name*</label>
+    <input type="text" [(ngModel)]="user.Name" >
+  </div>
+
+
+  <div class="form-item">
+    <label for="">Surname*</label>
+    <input type="text" [(ngModel)]="user.Surname" >
+  </div>
+
+
+  <div class="form-item">
+    <label for="">ID Number*</label>
+    <input type="text" [(ngModel)]="user.AddressLineWork" >
+  </div>
+  <div class="form-item">
+    <label for="">Phone Number</label>
+    <input type="text" [(ngModel)]="user.PhoneNumber" >
+  </div>
+  <div class="form-item">
+    <label for="">Email</label>
+    <input type="text" [(ngModel)]="user.Email" >
+  </div>
+
+  <div class="form-item">
+    <label for="">Display Image</label>
+    <app-image-widget [image]="user.Dp" (imageChangedEvent)="onImageChangedEvent($event)">
+    </app-image-widget>
+
+  </div>
+
+  <div class="form-item">
+    <label for="">Address</label>
+<!-- 
+    <textarea [(ngModel)]="user.Description">
+    </textarea> -->
+
+    <textarea name="" [(ngModel)]="user.AddressLineHome" id="" cols="30" rows="10"></textarea>
+  </div>
+
+  
+  <div class="form-item">
+    <label for="">Policy Status*</label>
+
+    <select name="" id="" [(ngModel)]="user.StatusId">
+      <option value="1">Active</option>
+      <option value="2">Draft</option>
+      <option value="3">Deleted</option>
+    </select>
+  </div>
+
+
+
+
+
+
+  <br>
+  <div class="action">
+    <button (click)="save()">Save</button>
+  </div>
+</div>
+
+<app-feedback [message]="message" *ngIf="message"></app-feedback>

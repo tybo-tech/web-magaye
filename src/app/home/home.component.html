@@ -1,0 +1,83 @@
+<div class="section">
+  <!-- <app-home-slider></app-home-slider> -->
+  <app-landing-page></app-landing-page>
+</div>
+<div class="section services" *ngIf="policies">
+  <h2>
+    Our cover packages.
+  </h2>
+
+  <div class="section services" *ngIf="policies">
+    <app-items-widget [items]="policies" [actionName]="actionName"></app-items-widget>
+  </div>
+</div>
+
+<div class="join">
+  <div class="data">
+    <h4>
+      SIGN UP AND JOIN US IN LESS THAN 5 MINUTES
+    </h4>
+
+    <button>Join</button>
+  </div>
+</div>
+
+<div class="section services" *ngIf="plans">
+  <h2>
+    Our funeral plans.
+  </h2>
+  <div class="cards">
+    <app-card *ngFor="let item of plans" [item]="item"></app-card>
+
+  </div>
+</div>
+<div class="section services" *ngIf="hundredsYears">
+
+  <div class="cards" style="grid-template-columns: 100%;">
+    <app-wide-card-image-right [item]="hundredsYears"></app-wide-card-image-right>
+  </div>
+</div>
+
+<div class="section services" *ngIf="cashless">
+
+  <div class="cards" style="grid-template-columns: 100%;">
+    <app-wide-card-image-right [item]="cashless" [showPayments]="'yes'"></app-wide-card-image-right>
+  </div>
+</div>
+
+<div class="join">
+  <div class="data form-data">
+    <h6>Call me back for a Quote</h6>
+    <input type="text" placeholder="Name*">
+    <input type="tel" placeholder="Contact number*">
+
+    <button>Call me back</button>
+  </div>
+</div>
+
+
+
+<div class="section about">
+  <h2>
+    About Us
+  </h2>
+
+  <p>
+    As of the 1st of November 2021 all our branches will be going cashless implies that Mcgaye has availed digital
+    payment options for payments of premiums, sign-ups and any other related payments.
+
+    We have put a number of payment options that our clients can use to pay for their policies and all these methods are
+    of ease and convenience.
+
+    As of the 1st of November 2021 all our branches will be going cashless implies that Mcgaye has availed digital
+    payment options for payments of premiums, sign-ups and any other related payments.
+
+    We have put a number of payment options that our clients can use to pay for their policies and all these methods are
+    of ease and convenience.
+  </p>
+  <br>
+  <div class="action">
+    <a routerLink="/about-us"><button>Learn more</button></a>
+
+  </div>
+</div>

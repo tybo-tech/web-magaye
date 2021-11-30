@@ -1,0 +1,76 @@
+<nav>
+  <div class="col">
+    <a routerLink=""> <img class="logo" src="assets/images/logo.png" alt=""></a>
+  </div>
+  <div class="col toggle-menu">
+    <a routerLink=""> <img (click)="showNav = !showNav" class="menu" src="assets/images/menu.svg" alt=""></a>
+  </div>
+
+  <div class="col">
+    <ul>
+      <li *ngFor="let item of items">
+        <a (click)="itemClicked(item)" [ngClass]="item.Classes" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{exact: true}" [routerLink]="item.Url">{{item.Name}}</a>
+      </li>
+    </ul>
+
+  </div>
+
+
+  <div class="col">
+    <ul class="account">
+      <li *ngFor="let item of accountItems">
+        <a (click)="itemClicked(item)" [ngClass]="item.Classes" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{exact: true}" [routerLink]="item.Url">{{item.Name}}</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+<nav class="phone-nav" *ngIf="showNav">
+
+  <div class="nav-items" >
+    <div class="item">
+      <div class="close">
+        <img (click)="showNav = !showNav" src="assets/images/close.svg" alt="">
+      </div>
+    </div>
+    <div class="item" *ngFor="let item of items">
+      <a  [ngClass]="item.Classes" (click)="itemClicked(item)" [routerLink]="item.Url">{{item.Name}}</a>
+    </div>
+
+    <div class="item" *ngFor="let item of accountItems">
+      <a  [ngClass]="item.Classes" (click)="itemClicked(item)" [routerLink]="item.Url">{{item.Name}}</a>
+    </div>
+  </div>
+
+</nav>
+
+
+
+<!-- <div class="nav">
+  <div class="col">
+    <a routerLink=""> <img class="logo" src="assets/images/logo.png" alt=""></a>
+  </div>
+  <div class="col">
+    <img class="menu" (click)="showNav = !showNav" src="assets/images/menu.svg" alt="">
+
+
+    <div class="pc-nav">
+      <div class="item" *ngFor="let item of items">
+        <a (click)="itemClicked(item)" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" [routerLink]="item.Url">{{item.Name}}</a>
+      </div>
+      <div class="item">
+        <a routerLink="book"><button>Payments.</button></a>
+      </div>
+      <div class="item">
+        <a routerLink="book" ><button style="background: rgb(44, 236, 70);">Join us.</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div> -->

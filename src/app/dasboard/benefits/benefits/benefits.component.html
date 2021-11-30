@@ -1,0 +1,6 @@
+<app-banner-widget [heading]="'Our Benefits'"></app-banner-widget>
+
+<button (click)="add()">Add new benefit</button>
+<div class="section services" *ngIf="services">
+  <app-items-widget [items]="services"></app-items-widget>
+</div>

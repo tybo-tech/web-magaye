@@ -1,0 +1,24 @@
+<div class="cards">
+  <div *ngFor="let item of items">
+    <div class="card" *ngIf="item">
+      <div class="img" *ngIf="item.img">
+        <img [src]="item.img" alt="">
+      </div>
+
+      <div class="body">
+        <h4>
+          {{item.heading}}
+          <span *ngIf="item.CreateDate" class="date">{{item.CreateDate | date : 'fullDate'}} {{item.CreateDate | date : 'shortTime'}}</span>
+          <span *ngIf="item.Price" class="date">{{item.PriceLabel}} {{item.Price | currency : 'R'}}</span>
+          <span  *ngIf="item.body" class="date">{{item.body}}</span>
+
+        </h4>
+     
+   
+        <a [routerLink]="item.url"><button> {{actionName || 'Manage'}}  </button></a>
+
+      </div>
+    </div>
+
+  </div>
+</div>

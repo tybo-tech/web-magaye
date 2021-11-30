@@ -1,0 +1,36 @@
+@import '../../../../colors';
+.form-item {
+  max-width: 60em;
+}
+
+.prem {
+  background: rgb(209, 209, 209);
+  margin: 1em;
+  border-radius: .5em;
+}
+
+.tab-header {
+  margin-top: 3em;
+  text-align: left;
+  padding: .5em;
+  span{
+      padding: 0 1em;
+      font-style: italic;
+      cursor: pointer;
+      color: $link;
+  }
+}
+
+
+.check{
+  display: grid;
+  grid-template-columns: 3em auto;
+  padding: .5em 0;
+  border-bottom: 1px solid $cloud;
+  input{
+    margin: .5em;
+  }
+  .name{
+    text-align: left;
+  }
+}

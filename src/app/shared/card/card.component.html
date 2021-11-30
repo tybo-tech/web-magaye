@@ -1,0 +1,20 @@
+<div class="card" *ngIf="item">
+  <div class="img">
+    <img [src]="item.img" alt="">
+  </div>
+  <div class="heading" *ngIf="item.heading">
+    <h3 >
+      {{item.heading}}
+    </h3>
+  </div>
+
+  <div class="body" *ngIf="item.body && item.body.length">
+    <p>
+      {{item.body}}
+    </p>
+  </div>
+
+  <div class="action">
+    <a routerLink="/our-services"><button>Read more</button></a>
+  </div>
+</div>

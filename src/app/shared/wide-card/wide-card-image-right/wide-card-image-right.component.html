@@ -1,0 +1,29 @@
+<div class="card" *ngIf="item">
+
+  <div class="row">
+
+    <div class="body">
+      <h3>
+        {{item.heading}}
+      </h3>
+
+      <h4>
+        {{item.sub}}
+      </h4>
+      <p *ngFor="let bb of item.body">
+        {{bb}}
+      </p>
+      <a routerLink="/book"><button>Join us</button></a>
+
+    </div>
+
+    <div class="img">
+      <img [src]="item.img" alt="">
+    </div>
+  </div>
+  <div class="payments" *ngIf="showPayments">
+    <img src="assets/images/paywith.png" alt="">
+  </div>
+</div>
+
+

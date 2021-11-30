@@ -1,0 +1,15 @@
+.main {
+  position: relative;
+  margin-bottom: 1em;
+  height: 14em;
+  overflow: hidden;
+
+  h1 {
+    position: absolute;
+    bottom: 1em;
+    z-index: 100;
+    width: 100%;
+    text-align: center;
+    color: white;
+  }
+}

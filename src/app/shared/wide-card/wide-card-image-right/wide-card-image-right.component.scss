@@ -1,0 +1,73 @@
+.card {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 100%;
+  text-align: center;
+  color: #000;
+  background: #fff;
+  margin-bottom: 2em;
+  border: 2px solid rgb(212, 212, 212);
+  padding: 0;
+  margin: 1em 0 !important;
+
+  .row {
+    display: grid;
+    grid-template-columns: 100%;
+
+    @media (min-width : 1050px) {
+      grid-template-columns: 50% auto;
+      padding: 2em;
+      grid-gap: 1em;
+    }
+
+    img{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+  }
+
+
+
+  .body {
+    padding: 1em;
+
+    @media (min-width : 1050px) {
+      padding: 0 1em;
+
+
+    }
+
+    p {
+      padding: 1em;
+      text-align: left;
+    }
+
+    h3,
+    h4 {
+      text-align: left;
+      padding: 1em;
+    }
+
+
+    button {
+      margin: 1em;
+    }
+  }
+
+
+}
+
+.payments {
+  overflow-x: scroll;
+
+  img {
+    height: 7em;
+    width: auto;
+
+    @media (min-width : 1050px) {
+        height: 12em;
+
+      }
+  }
+}

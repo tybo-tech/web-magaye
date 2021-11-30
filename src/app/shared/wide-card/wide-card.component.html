@@ -1,0 +1,16 @@
+<div class="card" *ngIf="item">
+  <div class="img">
+    <img [src]="item.img" alt="">
+  </div>
+
+  <div class="body">
+    <h3>
+      {{item.heading}}
+    </h3>
+    <p>
+      {{item.body}}
+    </p>
+    <a routerLink="/book"><button>Join us</button></a>
+
+  </div>
+</div>

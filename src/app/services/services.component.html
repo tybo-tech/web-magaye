@@ -1,0 +1,12 @@
+<app-banner-widget [heading]="' Our plans'"></app-banner-widget>
+
+
+<div class="section services" *ngIf="policies">
+  <h2>
+    Our cover packages.
+  </h2>
+
+  <div class="section services" *ngIf="policies">
+    <app-items-widget [items]="policies" [actionName]="actionName"></app-items-widget>
+  </div>
+</div>

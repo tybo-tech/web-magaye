@@ -1,0 +1,38 @@
+<app-banner-widget [heading]="'Our Clients'"></app-banner-widget>
+
+<button (click)="add()" >Add new client</button>
+<div class="section services" *ngIf="services">
+
+  <div class="cards">
+    <div  *ngFor="let item of users">
+      <div class="card" *ngIf="item">
+        <div class="img">
+          <img *ngIf="item.Dp" [src]="item.Dp" alt="">
+          <img *ngIf="!item.Dp" src="assets/images/user-con.png" alt="">
+        </div>
+      
+        <div class="body">
+          <h4>
+            {{item.Name}} {{item.Surname}}
+            <span class="date">{{item.CreateDate | date : 'fullDate'}} {{item.CreateDate | date : 'shortTime'}}</span>
+
+          </h4>
+          <p>
+            {{item.Email || '--No client email--'}} 
+            <span>
+              {{item.PhoneNumber || '--No client phone number--'}}
+            </span>
+
+          </p>
+          <div [innerHtml]="item.body">
+          </div>
+          <a (click)="manage(item)"><button>Manage</button></a>
+      
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+

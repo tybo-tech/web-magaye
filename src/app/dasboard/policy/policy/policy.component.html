@@ -1,0 +1,102 @@
+<app-banner-widget [heading]="heading"></app-banner-widget>
+<button (click)="back()">Back</button>
+
+<div class="section about" *ngIf="item">
+  <h2>
+
+  </h2>
+
+  <div class="form-item">
+    <label for="">Policy Name*</label>
+    <input type="text" [(ngModel)]="item.Name">
+  </div>
+
+  <div class="form-item">
+    <label for="">Policy Display Image*</label>
+    <app-image-widget [image]="item.ImageUrl" (imageChangedEvent)="onImageChangedEvent($event)">
+    </app-image-widget>
+
+  </div>
+
+  <div class="form-item">
+    <label for="">Policy Description</label>
+    <textarea name="" [(ngModel)]="item.Description" id="" cols="30" rows="6"></textarea>
+  </div>
+
+
+  <div class="form-item">
+    <label for="">Blog Status*</label>
+
+    <select name="" id="" [(ngModel)]="item.ItemStatus">
+      <option value="Published">Published</option>
+      <option value="Draft">Draft</option>
+      <option value="Deleted">Deleted</option>
+    </select>
+  </div>
+
+  <span *ngIf="item && item.CreateDate && premiums && premiums.length">
+    <h4 class="tab-header">
+      Premiums
+    </h4>
+    <div class="col-1-of-2 prem" *ngFor="let child of premiums">
+
+      <div class="form-item">
+
+        <label for="">Member Type*</label>
+
+        <select name="" id="" [(ngModel)]="child.Name">
+          <option *ngFor="let member of MEMBERTYPES" [value]="member.Name">{{member.Name}}</option>
+        </select>
+      </div>
+      <div class="form-item">
+        <label for="">Amount (Rands)</label>
+        <input type="number" [(ngModel)]="child.Price" (change)="savePrem(child)">
+      </div>
+
+    </div>
+
+
+    <h4 class="tab-header" (click)="addCharge()">
+      <span>
+        Add premium
+      </span>
+    </h4>
+
+  </span>
+
+
+  <span *ngIf="benefits && benefits.length">
+    <h4 class="tab-header">
+      Benefits
+    </h4>
+    <div class="benefits" *ngFor="let benefit of benefits">
+      <div class="form-item check" (click)="benefitSelect(benefit)">
+        <!-- <label for="">Amount (Rands)</label> -->
+        <input type="checkbox" [(ngModel)]="benefit.Selected"> 
+        <div class="name">
+          {{benefit.Name}}
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- <h4 class="tab-header" (click)="addCharge()">
+    <span>
+      Add premium
+    </span>
+  </h4> -->
+
+  </span>
+
+
+
+
+
+  <br>
+  <div class="action">
+    <button [disabled]="!item.Name" (click)="save()">Save</button>
+  </div>
+</div>
+
+<app-feedback [message]="message" *ngIf="message"></app-feedback>

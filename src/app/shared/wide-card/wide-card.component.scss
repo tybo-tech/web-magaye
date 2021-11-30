@@ -1,0 +1,42 @@
+.card {
+  display: grid;
+  grid-template-columns: 100%;
+  text-align: center;
+  color: #000;
+  background: #fff;
+  margin-bottom: 2em;
+  border: 2px solid rgb(212, 212, 212);
+  padding: 0;
+
+  @media (min-width : 1050px) {
+    grid-template-columns: 50% auto;
+    padding: 2em;
+
+  }
+
+  .body {
+    padding: 1em;
+
+    @media (min-width : 1050px) {
+      padding: 0 1em;
+
+
+    }
+
+    p {
+      padding: 1em;
+      text-align: left;
+    }
+
+    h3 {
+      text-align: left;
+      padding: 0 1em;
+    }
+
+    button {
+      margin: 1em;
+    }
+  }
+
+
+}

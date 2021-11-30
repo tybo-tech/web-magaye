@@ -1,0 +1,30 @@
+<app-banner-widget [heading]="' Our blogs'"></app-banner-widget>
+
+<button (click)="add()" >Add new blog</button>
+<div class="section services" *ngIf="services">
+
+  <div class="cards">
+    <div *ngFor="let item of services">
+      <div class="card" *ngIf="item">
+        <div class="img">
+          <img [src]="item.img" alt="">
+        </div>
+      
+        <div class="body">
+          <h3>
+            {{item.heading}}
+            <span class="date">{{item.CreateDate | date : 'fullDate'}} {{item.CreateDate | date : 'shortTime'}}</span>
+
+          </h3>
+          <div [innerHtml]="item.body">
+          </div>
+          <a [routerLink]="item.url"><button>Manage</button></a>
+      
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,48 @@
+<app-banner-widget [heading]="heading"></app-banner-widget>
+<button (click)="back()" >Back</button>
+
+<div class="section about" *ngIf="item">
+  <h2>
+    
+  </h2>
+
+  <div class="form-item">
+    <label for="">Blog Title*</label>
+    <input type="text" [(ngModel)]="item.Name" >
+  </div>
+
+  <div class="form-item">
+    <label for="">Blog Display Image*</label>
+    <app-image-widget [image]="item.ImageUrl" (imageChangedEvent)="onImageChangedEvent($event)">
+    </app-image-widget>
+
+  </div>
+
+  <div class="form-item">
+    <label for="">Body</label>
+
+    <quill-editor [styles]="editorStyle" [modules]="editorConfig" [(ngModel)]="item.Description">
+    </quill-editor>
+  </div>
+
+  
+  <div class="form-item">
+    <label for="">Blog Status*</label>
+
+    <select name="" id="" [(ngModel)]="item.ItemStatus">
+      <option value="Published">Published</option>
+      <option value="Draft">Draft</option>
+      <option value="Deleted">Deleted</option>
+    </select>
+  </div>
+
+
+
+
+  <br>
+  <div class="action">
+    <button (click)="formatBody(0)">Save</button>
+  </div>
+</div>
+
+<app-feedback [message]="message" *ngIf="message"></app-feedback>

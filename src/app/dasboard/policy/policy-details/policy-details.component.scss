@@ -1,0 +1,36 @@
+@import '../../../../colors';
+
+
+.about {
+  text-align: left;
+
+  p {
+    margin: 2em auto;
+  }
+}
+.form-item{
+    padding: .1em 1em;
+}
+.prem{
+    border: 2px solid $cloud;
+    margin: 1em auto;
+    grid-template-columns: 70% auto;
+    max-width: 96%;
+    @media only screen and (max-width: 600px) {
+        max-width: 92%;
+
+      }
+    h6{
+        font-weight: 400;
+    }
+
+    .tar{
+        font-weight: 700;
+        &:last-child{
+            text-align: right;
+        }
+    }
+}
+.tab-header{
+    padding: 1em;
+}
